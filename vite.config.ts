@@ -29,7 +29,10 @@ export default defineConfig(({ command }) => ({
     ...(command === "build"
       ? [
           nitro({
-            preset: "vercel",
+            preset:
+              process.env.NITRO_PRESET === "node-server"
+                ? "node-server"
+                : "vercel",
             serverDir: "./server",
           }),
         ]
