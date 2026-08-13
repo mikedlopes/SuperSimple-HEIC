@@ -129,6 +129,20 @@ This repo uses two:
 
 `sharing=locked` means only one build writes that cache at a time (safer for npm).
 
+**Sharing modes** (the `sharing=` value on `type=cache`):
+
+| Mode | Concurrent builds | Use when |
+| --- | --- | --- |
+| `shared` (BuildKit default) | All writers use the **same** files at once | Read-heavy caches, or tools that are multi-writer safe |
+| `locked` | Others **wait** for the lock | npm, apt, pip, yarn — one writer or the cache corrupts |
+| `private` | If busy, this build gets a **copy** | You must not wait, and you can afford extra disk |
+
+We use `locked` for both mounts. npm’s `~/.npm` is not safe for two `npm ci` processes. Vite’s `.vite` folder is mostly a compile cache; two writers can still clobber each other, so it waits rather than sharing.
+
+`private` would also be safe, but two parallel image builds would keep two copies of the npm cache and waste disk. `shared` is faster when many jobs hit a read-only compiler cache (Go’s `GOCACHE` is the usual example). It is the wrong default for package managers.
+
+Same `id` + `locked` means Compose and `docker build` share one cache and take turns. Different `id`s = different caches, even with the same `target` path.
+
 BuildKit is on by default in Docker 23+. On older daemons:
 
 ```bash
