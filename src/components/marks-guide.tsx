@@ -121,14 +121,13 @@ export function MarksGuide() {
         </h2>
         <div className="mt-4 space-y-4 text-pretty text-muted">
           <p>
-            The converter used to be Lumen, then Lum3n. Those sit low on the
-            ladder: a dictionary unit of light, already used by a telecom
-            company and photo apps. The 3 did not invent a new word.
+            Earlier working titles (Lumen, Lum3n, Tovra) sat on different
+            rungs. SuperSimple-HEIC does not.
           </p>
           <p>
-            <span className="text-fg">SuperSimple-HEIC</span> is coined — fanciful, not
-            a light or photo word. That is the rung that can work as a brand.
-            It is still not a clearance. No search, no filing, no ®. Terms
+            <span className="text-fg">SuperSimple-HEIC</span> is descriptive:
+            it names a simple HEIC tool. That is a weak trademark rung. Easy
+            to understand, hard to own. No search, no filing, no ®. Terms
             say the same.
           </p>
         </div>
