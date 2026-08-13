@@ -74,7 +74,7 @@ No environment variables are required for conversion. Do not set a database URL;
 
 ## Docker
 
-The image is a multi-stage Node 22 build. Conversion still happens in the browser; the container only serves the app.
+The image is a multi-stage Node 22 Alpine build. Conversion still happens in the browser; the container only serves the app. The runtime stage keeps the Node binary and `.output` — npm and unused font subsets are stripped.
 
 ### Build the image
 
@@ -110,7 +110,8 @@ Serves on http://localhost:8080. Stop with `Ctrl+C`, or `docker compose down`.
 
 ### Notes
 
-- Image is based on `node:22-alpine` and runs as the non-root `node` user.
+- Image is `node:22-alpine` with npm/corepack removed. Runs as a non-root `app` user.
+- After the Vite/Nitro build, `scripts/slim-output.mjs` drops the unused server-side `heic-to` copy, Grok PWA assets, `.woff` (woff2 remains), and non-Latin font files.
 - The process listens on `0.0.0.0:8080` (`PORT` / `HOST` can be overridden).
 - Do not bind-mount `node_modules` from the host into the image.
 - Rebuild after source changes: `docker build -t supersimple-heic .` or `docker compose up --build`.
