@@ -316,7 +316,7 @@ export function Converter() {
             blob: i.output,
           })),
       );
-      downloadBlob(blob, `tovra-${FORMAT_META[format].ext}.zip`);
+      downloadBlob(blob, `supersimple-heic-${FORMAT_META[format].ext}.zip`);
     } catch {
       toast("Could not build the zip. Try downloading files one at a time.");
     } finally {

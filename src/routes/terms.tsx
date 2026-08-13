@@ -6,11 +6,11 @@ import { SiteHeader } from "@/components/site-header";
 export const Route = createFileRoute("/terms")({
   head: () => ({
     meta: [
-      { title: "Terms of Use — Tovra" },
+      { title: "Terms of Use — SuperSimple-HEIC" },
       {
         name: "description",
         content:
-          "Terms of Use for the Tovra HEIC converter. The tool is provided as-is. Conversion runs on your device.",
+          "Terms of Use for the SuperSimple-HEIC HEIC converter. The tool is provided as-is. Conversion runs on your device.",
       },
     ],
   }),
@@ -30,8 +30,8 @@ function TermsPage() {
           <LegalSection id="agreement" title="1. Agreement">
             <p>
               These Terms of Use (“Terms”) are a binding agreement between you
-              and the operator of the Tovra website and browser tool
-              (“Tovra,” “we,” “us”). They cover the converter, educational
+              and the operator of the SuperSimple-HEIC website and browser tool
+              (“SuperSimple-HEIC,” “we,” “us”). They cover the converter, educational
               pages, sample files, and any related features (the “Service”).
             </p>
             <p>
@@ -41,7 +41,7 @@ function TermsPage() {
               do not use the Service.
             </p>
             <p>
-              If you use Tovra on behalf of a company or other organization,
+              If you use SuperSimple-HEIC on behalf of a company or other organization,
               you represent that you have authority to bind that organization,
               and “you” includes that organization.
             </p>
@@ -49,7 +49,7 @@ function TermsPage() {
 
           <LegalSection id="service" title="2. The Service">
             <p>
-              Tovra is a convenience tool that can decode HEIC/HEIF images in
+              SuperSimple-HEIC is a convenience tool that can decode HEIC/HEIF images in
               your browser and export JPEG, PNG, or WebP files. It also
               publishes general-interest explanations of those formats.
             </p>
@@ -146,7 +146,7 @@ function TermsPage() {
 
           <LegalSection id="ip" title="7. Our intellectual property">
             <p>
-              Tovra is an unregistered trade name we use as a badge. We do
+              SuperSimple-HEIC is an unregistered trade name we use as a badge. We do
               not claim a registered trademark, and we do not represent that
               the name has been searched or cleared. The name, design, text,
               sample files we provide, and software we publish as part of the
@@ -242,7 +242,7 @@ function TermsPage() {
 
           <LegalSection id="indemnity" title="12. Indemnity">
             <p>
-              You will defend, indemnify, and hold harmless Tovra and its
+              You will defend, indemnify, and hold harmless SuperSimple-HEIC and its
               operators, affiliates, and licensors from any claim, demand,
               loss, or expense (including reasonable legal fees) arising out
               of: your files or output; your use of the Service; your
@@ -283,7 +283,7 @@ function TermsPage() {
           <LegalSection id="law" title="16. Law and disputes">
             <p>
               These Terms are governed by the laws of the jurisdiction in
-              which the operator of Tovra maintains its principal place of
+              which the operator of SuperSimple-HEIC maintains its principal place of
               business, without regard to conflict-of-law rules, except that
               the Federal Arbitration Act may apply to arbitration if the
               parties later agree in writing to arbitrate.

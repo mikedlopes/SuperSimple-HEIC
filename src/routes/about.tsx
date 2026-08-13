@@ -6,7 +6,7 @@ import { SiteHeader } from "@/components/site-header";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "Learn — Tovra" },
+      { title: "Learn — SuperSimple-HEIC" },
       {
         name: "description",
         content:

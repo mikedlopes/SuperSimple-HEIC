@@ -6,7 +6,7 @@ import { SiteHeader } from "@/components/site-header";
 export const Route = createFileRoute("/compression")({
   head: () => ({
     meta: [
-      { title: "HEIC file size — Tovra" },
+      { title: "HEIC file size — SuperSimple-HEIC" },
       {
         name: "description",
         content:

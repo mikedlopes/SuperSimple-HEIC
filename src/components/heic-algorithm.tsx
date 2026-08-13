@@ -104,7 +104,7 @@ export function HeicAlgorithm() {
       </section>
 
       <p className="stagger-in mt-10 text-sm text-pretty text-muted">
-        The overlay is an illustration, not the production encoder. Tovra
+        The overlay is an illustration, not the production encoder. SuperSimple-HEIC
         decodes, then writes JPEG — which is why an export is often{" "}
         <Link
           to="/compression"

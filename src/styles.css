@@ -38,6 +38,27 @@
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+html.light {
+  --color-bg: #f4f2ec;
+  --color-surface: #fffcf7;
+  --color-surface-2: #ebe8e1;
+  --color-fg: #1c1b18;
+  --color-muted: #5f5e59;
+  --color-subtle: #8a8882;
+  --color-accent: #1c1b18;
+  --color-accent-fg: #f4f2ec;
+  --color-border: #ddd9d0;
+  --color-ok: #3f6b48;
+  --color-danger: #a14a42;
+  --color-ring: #1c1b18;
+  --shadow-border: 0 0 0 1px rgb(28 27 24 / 0.08);
+  --shadow-border-hover: 0 0 0 1px rgb(28 27 24 / 0.16);
+}
+
+html.light body {
+  -webkit-font-smoothing: auto;
+}
+
 @layer base {
   html {
     -webkit-font-smoothing: antialiased;

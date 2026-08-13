@@ -1,4 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const LEARN = new Set(["/about", "/compression", "/jpeg-artifacts", "/how"]);
 
@@ -11,13 +12,13 @@ export function SiteHeader() {
       <div className="min-w-0">
         <Link
           to="/"
-          className="font-display text-xl tracking-tight text-fg transition-[opacity] duration-150 hover:opacity-80"
+          className="block truncate font-display text-lg tracking-tight text-fg transition-[opacity] duration-150 hover:opacity-80 sm:text-xl"
         >
-          Tovra
+          SuperSimple-HEIC
         </Link>
         <p className="text-xs text-subtle">Files stay on this device</p>
       </div>
-      <nav className="flex items-center gap-4 text-sm sm:gap-5">
+      <nav className="flex items-center gap-3 text-sm sm:gap-5">
         <Link
           to="/"
           activeOptions={{ exact: true }}
@@ -36,6 +37,7 @@ export function SiteHeader() {
         >
           Learn
         </Link>
+        <ThemeToggle />
       </nav>
     </header>
   );

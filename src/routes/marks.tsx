@@ -7,7 +7,7 @@ import { SiteHeader } from "@/components/site-header";
 export const Route = createFileRoute("/marks")({
   head: () => ({
     meta: [
-      { title: "Trademark distinctiveness — Tovra" },
+      { title: "Trademark distinctiveness — SuperSimple-HEIC" },
       { name: "robots", content: "noindex" },
       {
         name: "description",

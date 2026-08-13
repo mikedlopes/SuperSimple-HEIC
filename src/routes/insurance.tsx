@@ -7,7 +7,7 @@ import { SiteHeader } from "@/components/site-header";
 export const Route = createFileRoute("/insurance")({
   head: () => ({
     meta: [
-      { title: "Digital liability insurance — Tovra" },
+      { title: "Digital liability insurance — SuperSimple-HEIC" },
       { name: "robots", content: "noindex" },
       {
         name: "description",

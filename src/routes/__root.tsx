@@ -5,10 +5,11 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
-import { Toaster } from "sonner";
+import { AppToaster } from "@/components/app-toaster";
+import { THEME_BOOT_SCRIPT } from "@/lib/theme";
 import appCss from "../styles.css?url";
 
-const APP_NAME = "Tovra — HEIC Converter";
+const APP_NAME = "SuperSimple-HEIC";
 const host = import.meta.env.VITE_PUBLIC_HOSTNAME;
 const ogImage = host
   ? `https://og.grok.me/v1/card.png?host=${encodeURIComponent(host)}&title=${encodeURIComponent(APP_NAME)}`
@@ -25,7 +26,7 @@ export const Route = createRootRoute({
         content:
           "Convert HEIC and HEIF photos to JPEG, PNG, or WebP. Runs entirely in your browser — nothing is uploaded.",
       },
-      { name: "apple-mobile-web-app-title", content: "Tovra" },
+      { name: "apple-mobile-web-app-title", content: "SuperSimple-HEIC" },
       { name: "theme-color", content: "#0b0b0c" },
       { name: "twitter:card", content: "summary_large_image" },
       ...(ogImage
@@ -46,19 +47,13 @@ export const Route = createRootRoute({
   component: () => (
     <html lang="en" className="antialiased" suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_BOOT_SCRIPT }} />
         <HeadContent />
       </head>
       <body className="min-h-dvh bg-bg text-fg">
         <PreviewHostBridge />
         <Outlet />
-        <Toaster
-          theme="dark"
-          position="bottom-center"
-          toastOptions={{
-            className:
-              "!bg-surface !text-fg !border-border !shadow-[var(--shadow-border)]",
-          }}
-        />
+        <AppToaster />
         <Scripts />
       </body>
     </html>

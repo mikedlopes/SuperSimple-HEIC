@@ -9,7 +9,7 @@ export function SiteFooter({ note }: { note?: string }) {
         </p>
       ) : null}
       <p className="mx-auto mt-3 max-w-3xl text-center text-xs text-pretty text-subtle">
-        By using Tovra you agree to the{" "}
+        By using SuperSimple-HEIC you agree to the{" "}
         <Link
           to="/terms"
           className="text-muted transition-[color] duration-150 hover:text-fg"

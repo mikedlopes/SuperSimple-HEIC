@@ -31,7 +31,7 @@ const LADDER = [
 const MYTHS = [
   {
     title: "A 3 makes it a new word",
-    body: "People read Tovra as Tovra. Examiners and judges often treat leetspeak, hyphens, and extra letters as the same mark if the sound and meaning survive. Grazing the spelling is a style choice, not a clearance.",
+    body: "People read SuperSimple-HEIC as SuperSimple-HEIC. Examiners and judges often treat leetspeak, hyphens, and extra letters as the same mark if the sound and meaning survive. Grazing the spelling is a style choice, not a clearance.",
   },
   {
     title: "We checked Google and we are fine",
@@ -117,7 +117,7 @@ export function MarksGuide() {
 
       <section className="stagger-in mt-12" style={{ animationDelay: "100ms" }}>
         <h2 className="font-display text-2xl tracking-tight text-fg">
-          Where Tovra sits
+          Where SuperSimple-HEIC sits
         </h2>
         <div className="mt-4 space-y-4 text-pretty text-muted">
           <p>
@@ -126,7 +126,7 @@ export function MarksGuide() {
             company and photo apps. The 3 did not invent a new word.
           </p>
           <p>
-            <span className="text-fg">Tovra</span> is coined — fanciful, not
+            <span className="text-fg">SuperSimple-HEIC</span> is coined — fanciful, not
             a light or photo word. That is the rung that can work as a brand.
             It is still not a clearance. No search, no filing, no ®. Terms
             say the same.

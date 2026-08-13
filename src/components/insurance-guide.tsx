@@ -353,7 +353,7 @@ const SPECIFIC_EXCLUSIONS = [
     forUs:
       "If two operators of the same project fall out, this form will not referee it.",
     example:
-      "One co-founder sues the other for diverting the Tovra domain. Both are named insureds. Insured-versus-insured ends that file on day one.",
+      "One co-founder sues the other for diverting the SuperSimple-HEIC domain. Both are named insureds. Insured-versus-insured ends that file on day one.",
   },
   {
     name: "Bodily injury and tangible property",
@@ -499,7 +499,7 @@ export function InsuranceGuide() {
           <p>
             If a broker in London says PI and a broker in Austin says tech
             E&O, ask to see the insuring agreement, not the nickname. What
-            matters is whether the form treats a tool like Tovra as a
+            matters is whether the form treats a tool like SuperSimple-HEIC as a
             professional service, and whether a free consumer user counts as
             a claimant. Those two points are{" "}
             <a
@@ -611,7 +611,7 @@ export function InsuranceGuide() {
             common; read it as two insuring agreements, not one blur.
           </p>
           <p>
-            Tovra is a thin site: hosted pages, no accounts, conversion in
+            SuperSimple-HEIC is a thin site: hosted pages, no accounts, conversion in
             the browser. The notes below cover a full multi-tenant product
             first, then what still applies here.
           </p>
@@ -710,7 +710,7 @@ export function InsuranceGuide() {
 
       <section className="stagger-in mt-12" style={{ animationDelay: "120ms" }}>
         <h2 className="font-display text-2xl tracking-tight text-fg">
-          How this shows up for a tool like Tovra
+          How this shows up for a tool like SuperSimple-HEIC
         </h2>
         <ul className="mt-6 grid gap-3 sm:grid-cols-2">
           {LUMEN_SCENES.map((item) => (
@@ -825,7 +825,7 @@ export function InsuranceGuide() {
       </section>
 
       <p className="stagger-in mt-12 text-sm text-pretty text-subtle">
-        Tovra does not sell insurance and is not your broker or lawyer.
+        SuperSimple-HEIC does not sell insurance and is not your broker or lawyer.
         Coverage depends on the form you buy and the facts of a claim.
       </p>
     </article>

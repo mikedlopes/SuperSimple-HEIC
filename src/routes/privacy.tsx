@@ -6,11 +6,11 @@ import { SiteHeader } from "@/components/site-header";
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
-      { title: "Privacy Notice — Tovra" },
+      { title: "Privacy Notice — SuperSimple-HEIC" },
       {
         name: "description",
         content:
-          "Tovra converts HEIC files in your browser. Photos are not uploaded for conversion.",
+          "SuperSimple-HEIC converts HEIC files in your browser. Photos are not uploaded for conversion.",
       },
     ],
   }),
@@ -29,7 +29,7 @@ function PrivacyPage() {
         >
           <LegalSection id="summary" title="In short">
             <p>
-              Tovra is built so conversion happens on your device. We do not
+              SuperSimple-HEIC is built so conversion happens on your device. We do not
               ask you to upload HEIC, HEIF, JPEG, PNG, or WebP files to our
               servers in order to convert them, and we do not operate a photo
               library of your pictures.
@@ -37,7 +37,7 @@ function PrivacyPage() {
             <p>
               Hosting the website and stopping abuse can still involve
               ordinary technical data. This notice explains that. It is not
-              a contract for legal advice. Use of Tovra is also governed by
+              a contract for legal advice. Use of SuperSimple-HEIC is also governed by
               the <Link to="/terms">Terms of Use</Link>.
             </p>
           </LegalSection>
@@ -61,7 +61,7 @@ function PrivacyPage() {
           <LegalSection id="technical" title="Technical data we may process">
             <p>
               Any website produces some operational data. Depending on how you
-              reach Tovra, our hosts, content networks, security tools, or
+              reach SuperSimple-HEIC, our hosts, content networks, security tools, or
               platform provider may automatically process:
             </p>
             <ul>

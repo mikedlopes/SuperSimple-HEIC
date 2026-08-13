@@ -6,7 +6,7 @@ import { SiteHeader } from "@/components/site-header";
 export const Route = createFileRoute("/jpeg-artifacts")({
   head: () => ({
     meta: [
-      { title: "JPEG artifacts — Tovra" },
+      { title: "JPEG artifacts — SuperSimple-HEIC" },
       {
         name: "description",
         content:
