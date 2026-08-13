@@ -1,20 +1,29 @@
+# syntax=docker/dockerfile:1
 # SuperSimple-HEIC — slim production image (Node 22, Alpine)
 #   docker build -t supersimple-heic .
 #   docker run --rm -p 8080:8080 supersimple-heic
-
-# syntax=docker/dockerfile:1
+#
+# Cache mounts (BuildKit) keep the npm download cache on the builder between
+# builds. They are NOT copied into the image. Requires BuildKit (Docker 23+
+# default; or DOCKER_BUILDKIT=1).
 
 FROM node:22-alpine AS deps
 WORKDIR /app
 COPY package.json package-lock.json ./
-RUN --mount=type=cache,target=/root/.npm npm ci
+# sharing=locked: one writer if two builds run at once (npm cache is not safe
+# for concurrent writers). id= is stable so compose and `docker build` share it.
+RUN --mount=type=cache,id=supersimple-heic-npm,target=/root/.npm,sharing=locked \
+    npm ci
 
 FROM deps AS build
 WORKDIR /app
 COPY . .
 ENV NITRO_PRESET=node-server
 ENV NODE_ENV=production
-RUN npm run build && node scripts/slim-output.mjs
+# Vite/Nitro incremental cache — survives source-only rebuilds.
+RUN --mount=type=cache,id=supersimple-heic-vite,target=/app/node_modules/.vite,sharing=locked \
+    --mount=type=cache,id=supersimple-heic-npm,target=/root/.npm,sharing=locked \
+    npm run build && node scripts/slim-output.mjs
 
 # Runtime: Node binary only — no npm, yarn, or headers
 FROM node:22-alpine AS runner

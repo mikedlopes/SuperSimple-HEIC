@@ -116,6 +116,40 @@ Serves on http://localhost:8080. Stop with `Ctrl+C`, or `docker compose down`.
 - Do not bind-mount `node_modules` from the host into the image.
 - Rebuild after source changes: `docker build -t supersimple-heic .` or `docker compose up --build`.
 
+### BuildKit cache mounts
+
+Docker BuildKit can attach a **cache mount** to a `RUN` step. The directory lives on the builder and is reused on the next build. It is **not** a layer and is **not** in the shipped image.
+
+This repo uses two:
+
+| id | Mounted at | Why |
+| --- | --- | --- |
+| `supersimple-heic-npm` | `/root/.npm` | npm tarball cache for `npm ci` |
+| `supersimple-heic-vite` | `/app/node_modules/.vite` | Vite incremental compile cache |
+
+`sharing=locked` means only one build writes that cache at a time (safer for npm).
+
+BuildKit is on by default in Docker 23+. On older daemons:
+
+```bash
+DOCKER_BUILDKIT=1 docker build -t supersimple-heic .
+```
+
+Useful commands:
+
+```bash
+# See cache usage
+docker buildx du
+
+# Drop unused cache (including these mounts)
+docker buildx prune
+
+# Drop everything, including in-use cache
+docker buildx prune --all
+```
+
+Other mount types (not used here): `type=bind` (host file at build time), `type=tmpfs`, `type=secret` (tokens that must not land in a layer), `type=ssh`.
+
 ## Stack
 
 React 19, TypeScript, Vite, TanStack Start, Tailwind CSS.
